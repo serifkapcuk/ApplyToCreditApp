@@ -7,25 +7,28 @@
 
 import Foundation
 
+enum EndpointCategory: String {
+    case account = "/account"
+}
 
-
-let baseUrl = "https://e7436aa5084d.ngrok-free.app/"
+enum Endpoints: String {
+    case login = "/login"
+    case register = "register"
+}
 
 protocol LoginPageViewModelInterface {
     func loginSucceeded(token: String)
     func loginFailed(error: Error)
 }
 
-
 final class LoginPageViewModel {
     
     var delegate: LoginPageViewModelInterface?
     
     let baseUrl = "https://e7436aa5084d.ngrok-free.app/api"
+    
     func login(identityNo:String, password:String) {
-        
-        
-        guard let url = URL(string: "\(baseUrl)/account/login") else { return }
+        guard let url = URL(string: "\(baseUrl)\(EndpointCategory.account.rawValue)\(Endpoints.login.rawValue)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -60,6 +63,3 @@ final class LoginPageViewModel {
         }.resume()
     }
 }
-
-   
-    
