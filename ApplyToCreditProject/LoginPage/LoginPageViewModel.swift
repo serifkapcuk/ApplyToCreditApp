@@ -1,0 +1,65 @@
+//
+//  LoginPageViewModel.swift
+//  ApplyToCreditProject
+//
+//  Created by Şerif Botan Kapcuk on 16.07.2025.
+//
+
+import Foundation
+
+
+
+let baseUrl = "https://e7436aa5084d.ngrok-free.app/"
+
+protocol LoginPageViewModelInterface {
+    func loginSucceeded(token: String)
+    func loginFailed(error: Error)
+}
+
+
+final class LoginPageViewModel {
+    
+    var delegate: LoginPageViewModelInterface?
+    
+    let baseUrl = "https://e7436aa5084d.ngrok-free.app/api"
+    func login(identityNo:String, password:String) {
+        
+        
+        guard let url = URL(string: "\(baseUrl)/account/login") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let loginData = LoginPage(identityNo: identityNo, password: password)
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(loginData)
+        } catch {
+            delegate?.loginFailed(error: error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            if let error = error {
+                self?.delegate?.loginFailed(error: error)
+                return
+            }
+            
+            guard let data = data else {
+                self?.delegate?.loginFailed(error: NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Veri Boş"]))
+                return
+            }
+            
+            do {
+                let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                self?.delegate?.loginSucceeded(token: loginResponse.token)
+            } catch {
+                self?.delegate?.loginFailed(error: error)
+            }
+        }.resume()
+    }
+}
+
+   
+    
