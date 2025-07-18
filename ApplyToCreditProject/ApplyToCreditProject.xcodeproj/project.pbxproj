@@ -11,6 +11,12 @@
 		B331528B2E2665CA00B42168 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = B331528A2E2665CA00B42168 /* Slide.xib */; };
 		B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5842E2A31DD006FD36E /* DashboardViewController.swift */; };
 		B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */; };
+		B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5D02E2A48BD006FD36E /* TokenManager.swift */; };
+		B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5F52E2A708B006FD36E /* CreditTypes.swift */; };
+		B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5F82E2A722E006FD36E /* EndPoint.swift */; };
+		B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */; };
+		B371F6032E2A831A006FD36E /* CreditTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */; };
+		B371F6042E2A831A006FD36E /* CreditTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		B331528A2E2665CA00B42168 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		B371F5842E2A31DD006FD36E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		B371F5D02E2A48BD006FD36E /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		B371F5F52E2A708B006FD36E /* CreditTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypes.swift; sourceTree = "<group>"; };
+		B371F5F82E2A722E006FD36E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCategory.swift; sourceTree = "<group>"; };
+		B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -91,6 +103,9 @@
 		B33151C82E252EF900B42168 = {
 			isa = PBXGroup;
 			children = (
+				B371F5FC2E2A825B006FD36E /* CollectionView */,
+				B371F5F72E2A7229006FD36E /* Enums */,
+				B371F5CE2E2A447E006FD36E /* Token */,
 				B371F5832E2A31B4006FD36E /* Dashboard */,
 				B33152AD2E27CE3600B42168 /* LoginPage */,
 				B33152872E26658900B42168 /* ScrollView */,
@@ -125,10 +140,37 @@
 		B371F5832E2A31B4006FD36E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				B371F5F52E2A708B006FD36E /* CreditTypes.swift */,
 				B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */,
 				B371F5842E2A31DD006FD36E /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B371F5CE2E2A447E006FD36E /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				B371F5D02E2A48BD006FD36E /* TokenManager.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		B371F5F72E2A7229006FD36E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */,
+				B371F5F82E2A722E006FD36E /* EndPoint.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B371F5FC2E2A825B006FD36E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */,
+				B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B371F6042E2A831A006FD36E /* CreditTypeCollectionViewCell.xib in Resources */,
 				B331528B2E2665CA00B42168 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,8 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33152892E2665BB00B42168 /* Slide.swift in Sources */,
+				B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */,
+				B371F6032E2A831A006FD36E /* CreditTypeCollectionViewCell.swift in Sources */,
+				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
+				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
 				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,
 				B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */,
+				B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

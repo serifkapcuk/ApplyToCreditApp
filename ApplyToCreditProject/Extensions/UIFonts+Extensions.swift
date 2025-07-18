@@ -13,3 +13,6 @@ extension UIFont {
     static var TDTitle : UIFont? = UIFont(name: Constans.Font.PalanquinDarkBold, size: 20)
     static var TDBody: UIFont? = UIFont(name: Constans.Font.PalanquinDarkNormal, size: 20)
 }
+extension Notification.Name {
+    static let creditTypesFetched = Notification.Name("creditTypesFetched")
+}

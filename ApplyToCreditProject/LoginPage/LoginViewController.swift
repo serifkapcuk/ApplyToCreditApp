@@ -16,13 +16,11 @@ class LoginViewController: UIViewController {
     
     let viewModel = LoginPageViewModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         setupUI()
         setupPasswordToggle()
-        
     }
     
     func setupPasswordToggle() {
@@ -57,7 +55,6 @@ class LoginViewController: UIViewController {
             string: "Dijital Şifreniz",
             attributes: [.foregroundColor: UIColor.black]
         )
-        
     }
     
     func goToDashboard() {
@@ -65,7 +62,7 @@ class LoginViewController: UIViewController {
         let nextVC = storyboard.instantiateViewController(withIdentifier: "dashboardID")
         nextVC.modalPresentationStyle = .custom
         self.present(nextVC, animated: true, completion: nil)
-        }
+    }
     
     func checkLimitedLoginPage(){
         if userNumberTextField.text?.count == 11 && passwordTextField.text?.count == 6 {
@@ -87,7 +84,6 @@ class LoginViewController: UIViewController {
         checkLimitedLoginPage()
     }
     
-    
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "homePageID")
@@ -101,22 +97,31 @@ class LoginViewController: UIViewController {
               let password = passwordTextField.text else { return }
         
         viewModel.login(identityNo: identity, password: password)
-    
+        
     }
 }
 
-extension LoginViewController: LoginPageViewModelInterface {
+extension LoginViewController: LoginPageViewModelInterface{
     func loginSucceeded(token: String) {
+        TokenManager.shared.token = token
         print("Giriş başarılı! Token: \(token)")
-        UserDefaults.standard.set(token, forKey: "authToken")
-        DispatchQueue.main.async { [weak self] in
-               self?.goToDashboard()
-           }
-
+        if TokenManager.shared.token !=  nil {
+            DispatchQueue.main.async { [weak self] in
+                self?.goToDashboard()
+            }
+        }
+        else{
+            print("Token mevcut değil, bundan dolayı işleminize devam edilemiyor")
+        }
     }
     
     func loginFailed(error: Error) {
         print("Giriş başarısız: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            
+            let alert = UIAlertController(title: "Hata", message:"Hatalı Giriş Yaptınız Lütfen Tekrar Deneyiniz!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
-}
-
+} 

@@ -8,9 +8,7 @@
 
 import Foundation
 
-
-struct LoginResponse:Codable{
-    
+struct LoginResponse: Codable {
     var token: String
     var name: String
     var lastname: String
