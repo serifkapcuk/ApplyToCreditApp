@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B33152892E2665BB00B42168 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33152882E2665BB00B42168 /* Slide.swift */; };
 		B331528B2E2665CA00B42168 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = B331528A2E2665CA00B42168 /* Slide.xib */; };
+		B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5842E2A31DD006FD36E /* DashboardViewController.swift */; };
+		B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B33151D12E252EF900B42168 /* ApplyToCreditProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplyToCreditProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33152882E2665BB00B42168 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		B331528A2E2665CA00B42168 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		B371F5842E2A31DD006FD36E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -87,6 +91,7 @@
 		B33151C82E252EF900B42168 = {
 			isa = PBXGroup;
 			children = (
+				B371F5832E2A31B4006FD36E /* Dashboard */,
 				B33152AD2E27CE3600B42168 /* LoginPage */,
 				B33152872E26658900B42168 /* ScrollView */,
 				B33152022E2532EA00B42168 /* Constans */,
@@ -115,6 +120,15 @@
 				B331528A2E2665CA00B42168 /* Slide.xib */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		B371F5832E2A31B4006FD36E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */,
+				B371F5842E2A31DD006FD36E /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33152892E2665BB00B42168 /* Slide.swift in Sources */,
+				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,
+				B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

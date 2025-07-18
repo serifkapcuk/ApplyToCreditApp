@@ -9,16 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="ISX-w6-Bdx">
             <objects>
-                <viewController id="Mtd-E6-ITB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboardID" id="Mtd-E6-ITB" customClass="DashboardViewController" customModule="ApplyToCreditProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tkH-NZ-oaA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-bV-Pud">
+                                <rect key="frame" x="-35" y="-15" width="463" height="882"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vakifbanklogo" translatesAutoresizingMaskIntoConstraints="NO" id="NHz-hh-tOn">
+                                <rect key="frame" x="111" y="94" width="170" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qe4-pm-xp8">
+                                <rect key="frame" x="319" y="90" width="58" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="myprofilebutton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl3-40-U5N">
+                                <rect key="frame" x="175" y="200" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BlZ-Nx-xHu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="myProfileButton" destination="qe4-pm-xp8" id="pQs-RE-ria"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arq-mc-1UO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,10 +172,15 @@
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="dMh-fw-NDN" firstAttribute="top" secondItem="Eth-QR-mbI" secondAttribute="bottom" constant="30" id="3Cv-dv-VFL"/>
+                            <constraint firstItem="Eth-QR-mbI" firstAttribute="top" secondItem="APF-QM-Ril" secondAttribute="bottom" constant="62" id="9M5-To-1RP"/>
                             <constraint firstItem="dMh-fw-NDN" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="48" id="BCW-9M-zKa"/>
                             <constraint firstItem="iiv-bg-I8m" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="59" id="CWM-ds-oPp"/>
                             <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="APF-QM-Ril" secondAttribute="trailing" constant="20" id="FMo-rc-tpN"/>
+                            <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="APF-QM-Ril" secondAttribute="trailing" constant="20" id="GxZ-dg-0AS"/>
+                            <constraint firstItem="APF-QM-Ril" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="340" id="IDl-XU-Pjk"/>
+                            <constraint firstItem="APF-QM-Ril" firstAttribute="top" secondItem="xfR-tb-WS5" secondAttribute="top" id="KdX-xb-kXb"/>
                             <constraint firstItem="Eth-QR-mbI" firstAttribute="top" secondItem="APF-QM-Ril" secondAttribute="bottom" constant="62" id="Qx4-Ng-sJ3"/>
+                            <constraint firstItem="APF-QM-Ril" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="340" id="Tt2-YF-pco"/>
                             <constraint firstItem="iiv-bg-I8m" firstAttribute="top" secondItem="dMh-fw-NDN" secondAttribute="bottom" constant="28" id="U96-aY-ZDe"/>
                             <constraint firstItem="xfR-tb-WS5" firstAttribute="bottom" secondItem="iiv-bg-I8m" secondAttribute="bottom" constant="388" id="UYZ-Ny-7rp"/>
                             <constraint firstItem="Eth-QR-mbI" firstAttribute="top" secondItem="xfR-tb-WS5" secondAttribute="top" constant="90" id="WzX-lX-GpX"/>
@@ -158,9 +189,11 @@
                             <constraint firstItem="dMh-fw-NDN" firstAttribute="top" secondItem="Eth-QR-mbI" secondAttribute="bottom" constant="30" id="jom-cA-9Go"/>
                             <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="iiv-bg-I8m" secondAttribute="trailing" constant="69" id="k8l-yl-65E"/>
                             <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="dMh-fw-NDN" secondAttribute="trailing" constant="48" id="qEZ-8a-rD0"/>
+                            <constraint firstItem="Eth-QR-mbI" firstAttribute="top" secondItem="APF-QM-Ril" secondAttribute="bottom" constant="62" id="tMO-bU-B5d"/>
                             <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="Eth-QR-mbI" secondAttribute="trailing" constant="48" id="tWU-xV-MTe"/>
                             <constraint firstItem="Eth-QR-mbI" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="48" id="vLM-gJ-1yd"/>
                             <constraint firstItem="APF-QM-Ril" firstAttribute="leading" secondItem="xfR-tb-WS5" secondAttribute="leading" constant="340" id="xBx-5w-5pF"/>
+                            <constraint firstItem="xfR-tb-WS5" firstAttribute="trailing" secondItem="APF-QM-Ril" secondAttribute="trailing" constant="20" id="ydd-jx-suB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -179,9 +212,11 @@
         <image name="background" width="393" height="800"/>
         <image name="cancelButton" width="27" height="27"/>
         <image name="loginButton" width="241" height="48"/>
+        <image name="myprofilebutton" width="34" height="34"/>
         <image name="signInButton" width="237" height="58"/>
         <image name="signUpButton" width="237" height="58"/>
         <image name="upperMenuLogin" width="393" height="287"/>
+        <image name="vakifbanklogo" width="176" height="28"/>
         <namedColor name="AccentColor">
             <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         viewModel.delegate = self
         setupUI()
         setupPasswordToggle()
+        
     }
     
     func setupPasswordToggle() {
@@ -59,6 +60,13 @@ class LoginViewController: UIViewController {
         
     }
     
+    func goToDashboard() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "dashboardID")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
+        }
+    
     func checkLimitedLoginPage(){
         if userNumberTextField.text?.count == 11 && passwordTextField.text?.count == 6 {
             loginButton.isUserInteractionEnabled = true
@@ -93,12 +101,18 @@ class LoginViewController: UIViewController {
               let password = passwordTextField.text else { return }
         
         viewModel.login(identityNo: identity, password: password)
+    
     }
 }
 
 extension LoginViewController: LoginPageViewModelInterface {
     func loginSucceeded(token: String) {
         print("Giriş başarılı! Token: \(token)")
+        UserDefaults.standard.set(token, forKey: "authToken")
+        DispatchQueue.main.async { [weak self] in
+               self?.goToDashboard()
+           }
+
     }
     
     func loginFailed(error: Error) {

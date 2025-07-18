@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 enum EndpointCategory: String {
     case account = "/account"
 }
-
 enum Endpoints: String {
     case login = "/login"
     case register = "register"
