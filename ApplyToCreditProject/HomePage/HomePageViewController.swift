@@ -14,7 +14,7 @@ class HomePageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var signInButton: UIButton!
     
     let viewModel = HomePageViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -54,7 +54,7 @@ class HomePageViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollViewHomePage:UIScrollView) {
         let pageIndex = round(scrollViewHomePage.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
-  
+        
     }
     @IBAction func buttonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -66,8 +66,17 @@ class HomePageViewController: UIViewController, UIScrollViewDelegate {
             self.present(nextVC, animated: true, completion: nil)
         }
     }
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "signUpID")
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        if let navController = self.navigationController {
+            navController.pushViewController(nextVC, animated: true)
+        } else {
+            self.present(nextVC, animated: true, completion: nil)
+        }
+    }
 }
- 
  
 
 

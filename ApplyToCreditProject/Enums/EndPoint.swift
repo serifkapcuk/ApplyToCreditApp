@@ -7,6 +7,6 @@
 
 enum Endpoints: String {
     case login = "/login"
-    case register = "register"
+    case register = "/register"
     case getAllCredits = "/GetAllCredits"
 }

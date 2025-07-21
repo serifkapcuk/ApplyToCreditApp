@@ -16,6 +16,10 @@
 		B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5F82E2A722E006FD36E /* EndPoint.swift */; };
 		B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */; };
 		B371F67B2E2E2380006FD36E /* NameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F67A2E2E237C006FD36E /* NameManager.swift */; };
+		B371F6832E2E6413006FD36E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F6822E2E640D006FD36E /* RegisterRequest.swift */; };
+		B371F6852E2E65E2006FD36E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F6842E2E65DB006FD36E /* RegisterResponse.swift */; };
+		B371F6872E2E78E9006FD36E /* WorkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F6862E2E78DB006FD36E /* WorkTypes.swift */; };
+		B371F68A2E2E85BB006FD36E /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = B371F6892E2E85BB006FD36E /* netfox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,9 @@
 		B371F5F82E2A722E006FD36E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCategory.swift; sourceTree = "<group>"; };
 		B371F67A2E2E237C006FD36E /* NameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameManager.swift; sourceTree = "<group>"; };
+		B371F6822E2E640D006FD36E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		B371F6842E2E65DB006FD36E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		B371F6862E2E78DB006FD36E /* WorkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -42,6 +49,7 @@
 		B371F67D2E2E3344006FD36E /* Exceptions for "Controllers" folder in "ApplyToCreditProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Register.swift,
 				SignUpPageViewController.swift,
 				SignUpPageViewModel.swift,
 			);
@@ -108,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B371F68A2E2E85BB006FD36E /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +180,7 @@
 		B371F5F72E2A7229006FD36E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				B371F6862E2E78DB006FD36E /* WorkTypes.swift */,
 				B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */,
 				B371F5F82E2A722E006FD36E /* EndPoint.swift */,
 			);
@@ -180,8 +190,8 @@
 		B371F6732E2E1978006FD36E /* SignUpPage */ = {
 			isa = PBXGroup;
 			children = (
-				B371F6792E2E19F9006FD36E /* Models */,
 				B371F6782E2E19F1006FD36E /* Controllers */,
+				B371F6792E2E19F9006FD36E /* Models */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
@@ -207,6 +217,8 @@
 		B371F6792E2E19F9006FD36E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B371F6842E2E65DB006FD36E /* RegisterResponse.swift */,
+				B371F6822E2E640D006FD36E /* RegisterRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +250,7 @@
 			);
 			name = ApplyToCreditProject;
 			packageProductDependencies = (
+				B371F6892E2E85BB006FD36E /* netfox */,
 			);
 			productName = ApplyToCreditProject;
 			productReference = B33151D12E252EF900B42168 /* ApplyToCreditProject.app */;
@@ -267,6 +280,9 @@
 			);
 			mainGroup = B33151C82E252EF900B42168;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B371F6882E2E85BB006FD36E /* XCRemoteSwiftPackageReference "netfox" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B33151D22E252EF900B42168 /* Products */;
 			projectDirPath = "";
@@ -294,11 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33152892E2665BB00B42168 /* Slide.swift in Sources */,
+				B371F6852E2E65E2006FD36E /* RegisterResponse.swift in Sources */,
 				B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */,
 				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
+				B371F6832E2E6413006FD36E /* RegisterRequest.swift in Sources */,
 				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
 				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,
 				B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */,
+				B371F6872E2E78E9006FD36E /* WorkTypes.swift in Sources */,
 				B371F67B2E2E2380006FD36E /* NameManager.swift in Sources */,
 				B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */,
 			);
@@ -502,6 +521,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B371F6882E2E85BB006FD36E /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B371F6892E2E85BB006FD36E /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B371F6882E2E85BB006FD36E /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B33151C92E252EF900B42168 /* Project object */;
 }
