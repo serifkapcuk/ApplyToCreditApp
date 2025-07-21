@@ -9,25 +9,34 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
-    // @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet weak var stackView: UIStackView!
-    
+    @IBOutlet weak var headerText: UILabel!
     
     let viewModel = DashboardViewModel()
     var creditItems: [CreditTypes] = []
+    
     
     @IBOutlet var myProfileButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  setupCollectionView()
+        getTitleName()
         viewModel.getCreditTypes { [weak self] creditTypesArray in
             guard let creditArray = creditTypesArray else { return }
             DispatchQueue.main.async {
                 self?.createButtonsDynamically(from: creditArray)
             }
         }
+      
+        
+    }
+    
+    func getTitleName() {
+        if let name = NameManager.sharedName?.currentUserName {
+            headerText.text = "HOŞGELDİN , \(name)!"
+        }
+        
     }
     
     func createButtonsDynamically(from credits: [CreditTypes]) {
@@ -35,9 +44,9 @@ class DashboardViewController: UIViewController {
         
         for credit in credits {
             let button = UIButton(type: .system)
-            button.setTitle(credit.creditName, for: .normal)
+            button.setTitle(credit.creditName, for: .normal)            
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-            button.backgroundColor = .systemBlue
+            button.backgroundColor = .black
             button.tintColor = .white
             button.layer.cornerRadius = 10
             button.heightAnchor.constraint(equalToConstant: 50).isActive = true

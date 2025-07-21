@@ -15,8 +15,7 @@
 		B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5F52E2A708B006FD36E /* CreditTypes.swift */; };
 		B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5F82E2A722E006FD36E /* EndPoint.swift */; };
 		B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */; };
-		B371F6032E2A831A006FD36E /* CreditTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */; };
-		B371F6042E2A831A006FD36E /* CreditTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */; };
+		B371F67B2E2E2380006FD36E /* NameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F67A2E2E237C006FD36E /* NameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +28,7 @@
 		B371F5F52E2A708B006FD36E /* CreditTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypes.swift; sourceTree = "<group>"; };
 		B371F5F82E2A722E006FD36E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		B371F5FA2E2A7293006FD36E /* EndpointCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCategory.swift; sourceTree = "<group>"; };
-		B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeCollectionViewCell.swift; sourceTree = "<group>"; };
-		B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		B371F67A2E2E237C006FD36E /* NameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -38,6 +36,14 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+			);
+			target = B33151D02E252EF900B42168 /* ApplyToCreditProject */;
+		};
+		B371F67D2E2E3344006FD36E /* Exceptions for "Controllers" folder in "ApplyToCreditProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SignUpPageViewController.swift,
+				SignUpPageViewModel.swift,
 			);
 			target = B33151D02E252EF900B42168 /* ApplyToCreditProject */;
 		};
@@ -87,6 +93,14 @@
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
+		B371F6782E2E19F1006FD36E /* Controllers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B371F67D2E2E3344006FD36E /* Exceptions for "Controllers" folder in "ApplyToCreditProject" target */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +117,7 @@
 		B33151C82E252EF900B42168 = {
 			isa = PBXGroup;
 			children = (
-				B371F5FC2E2A825B006FD36E /* CollectionView */,
+				B371F6732E2E1978006FD36E /* SignUpPage */,
 				B371F5F72E2A7229006FD36E /* Enums */,
 				B371F5CE2E2A447E006FD36E /* Token */,
 				B371F5832E2A31B4006FD36E /* Dashboard */,
@@ -140,9 +154,8 @@
 		B371F5832E2A31B4006FD36E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B371F5F52E2A708B006FD36E /* CreditTypes.swift */,
-				B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */,
-				B371F5842E2A31DD006FD36E /* DashboardViewController.swift */,
+				B371F6772E2E19E6006FD36E /* Controllers */,
+				B371F6762E2E19D5006FD36E /* Models */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -164,13 +177,38 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		B371F5FC2E2A825B006FD36E /* CollectionView */ = {
+		B371F6732E2E1978006FD36E /* SignUpPage */ = {
 			isa = PBXGroup;
 			children = (
-				B371F6012E2A831A006FD36E /* CreditTypeCollectionViewCell.swift */,
-				B371F6022E2A831A006FD36E /* CreditTypeCollectionViewCell.xib */,
+				B371F6792E2E19F9006FD36E /* Models */,
+				B371F6782E2E19F1006FD36E /* Controllers */,
 			);
-			path = CollectionView;
+			path = SignUpPage;
+			sourceTree = "<group>";
+		};
+		B371F6762E2E19D5006FD36E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B371F5F52E2A708B006FD36E /* CreditTypes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B371F6772E2E19E6006FD36E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B371F67A2E2E237C006FD36E /* NameManager.swift */,
+				B371F5842E2A31DD006FD36E /* DashboardViewController.swift */,
+				B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B371F6792E2E19F9006FD36E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B371F6042E2A831A006FD36E /* CreditTypeCollectionViewCell.xib in Resources */,
 				B331528B2E2665CA00B42168 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,11 +295,11 @@
 			files = (
 				B33152892E2665BB00B42168 /* Slide.swift in Sources */,
 				B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */,
-				B371F6032E2A831A006FD36E /* CreditTypeCollectionViewCell.swift in Sources */,
 				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
 				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
 				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,
 				B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */,
+				B371F67B2E2E2380006FD36E /* NameManager.swift in Sources */,
 				B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

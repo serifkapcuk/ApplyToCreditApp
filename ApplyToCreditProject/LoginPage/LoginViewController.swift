@@ -115,6 +115,13 @@ extension LoginViewController: LoginPageViewModelInterface{
         }
     }
     
+    func loginSucceeded(name: String) {
+        NameManager.sharedName?.currentUserName = name
+    }
+    
+    
+    
+    
     func loginFailed(error: Error) {
         print("Giriş başarısız: \(error.localizedDescription)")
         DispatchQueue.main.async {

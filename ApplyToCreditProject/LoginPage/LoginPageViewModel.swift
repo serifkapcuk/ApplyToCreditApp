@@ -12,14 +12,14 @@ import UIKit
 
 protocol LoginPageViewModelInterface {
     func loginSucceeded(token: String)
+    func loginSucceeded(name: String)
     func loginFailed(error: Error)
 }
 
 final class LoginPageViewModel {
-    
     var delegate: LoginPageViewModelInterface?
     
-    let baseUrl = "https://e7436aa5084d.ngrok-free.app/api"
+    let baseUrl = "https://6075d8e5012c.ngrok-free.app/api"
     
     func login(identityNo:String, password:String) {
         guard let url = URL(string: "\(baseUrl)\(EndpointCategory.account.rawValue)\(Endpoints.login.rawValue)") else { return }
@@ -50,7 +50,10 @@ final class LoginPageViewModel {
             
             do {
                 let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-                self?.delegate?.loginSucceeded(token: loginResponse.token)
+                DispatchQueue.main.async {
+                    self?.delegate?.loginSucceeded(token: loginResponse.token)
+                    self?.delegate?.loginSucceeded(name: loginResponse.name)
+                }
             } catch {
                 self?.delegate?.loginFailed(error: error)
             }

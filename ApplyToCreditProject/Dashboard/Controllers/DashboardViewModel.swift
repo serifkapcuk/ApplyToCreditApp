@@ -10,7 +10,7 @@ import UIKit
 
 final class DashboardViewModel {
     
-    let baseUrl = "https://e7436aa5084d.ngrok-free.app/api"
+    let baseUrl = "https://6075d8e5012c.ngrok-free.app/api"
    
     func getCreditTypes(completion: @escaping ([CreditTypes]?) -> Void) {
         guard let url = URL(string: "\(baseUrl)\(EndpointCategory.credits.rawValue)\(Endpoints.getAllCredits.rawValue)") else { return }
