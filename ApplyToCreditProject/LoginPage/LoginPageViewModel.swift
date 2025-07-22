@@ -13,6 +13,7 @@ import UIKit
 protocol LoginPageViewModelInterface {
     func loginSucceeded(token: String)
     func loginSucceeded(name: String)
+    func loginSucceeded(user: User)
     func loginFailed(error: Error)
 }
 

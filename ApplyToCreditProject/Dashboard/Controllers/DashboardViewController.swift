@@ -31,6 +31,12 @@ class DashboardViewController: UIViewController {
       
         
     }
+    @IBAction func profileButtonTapped()  {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "myProfileID")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
+    }
     
     func getTitleName() {
         if let name = NameManager.sharedName?.currentUserName {
@@ -40,14 +46,20 @@ class DashboardViewController: UIViewController {
     }
     
     func createButtonsDynamically(from credits: [CreditTypes]) {
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         for credit in credits {
+           
             let button = UIButton(type: .system)
             button.setTitle(credit.creditName, for: .normal)            
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-            button.backgroundColor = .black
-            button.tintColor = .white
+            button.backgroundColor = .white
+            button.tintColor = .black
+            button.titleLabel?.textColor = .black
             button.layer.cornerRadius = 10
             button.heightAnchor.constraint(equalToConstant: 50).isActive = true
             

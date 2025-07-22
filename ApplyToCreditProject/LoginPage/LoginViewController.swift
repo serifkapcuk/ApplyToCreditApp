@@ -102,6 +102,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPageViewModelInterface{
+    func loginSucceeded(user: User) {
+        TokenManager.shared.userID = user.id
+    }
+    
     func loginSucceeded(token: String) {
         TokenManager.shared.token = token
         print("Giriş başarılı! Token: \(token)")

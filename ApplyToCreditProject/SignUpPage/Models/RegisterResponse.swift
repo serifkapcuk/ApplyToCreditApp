@@ -9,5 +9,4 @@ import Foundation
 
 struct RegisterResponse: Codable {
     let token: String
-    let name: String
 }

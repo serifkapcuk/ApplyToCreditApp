@@ -9,6 +9,7 @@
 import Foundation
 
 struct LoginResponse: Codable {
+    var id: Int
     var token: String
     var name: String
     var lastname: String

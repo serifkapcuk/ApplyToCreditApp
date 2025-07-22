@@ -13,4 +13,6 @@ final class TokenManager {
     private init() {}
         
     var token: String?
+    var userID: Int?
+    
 }

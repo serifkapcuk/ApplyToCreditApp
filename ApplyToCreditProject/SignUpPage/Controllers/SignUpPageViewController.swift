@@ -157,8 +157,13 @@ class SignUpPageViewController: UIViewController {
 extension SignUpPageViewController : RegisterPageViewModelInterface {
     func registerSucceeded(token: String) {
         TokenManager.shared.token = token
+        print(" Kayıt başarılı! Token: \(TokenManager.shared.token)")
+
         DispatchQueue.main.async { [weak self] in
-            self?.performSegue(withIdentifier: "dashboardID", sender: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "dashboardID")
+            nextVC.modalPresentationStyle = .custom
+            self?.present(nextVC, animated: true, completion: nil)
         }
     }
     
