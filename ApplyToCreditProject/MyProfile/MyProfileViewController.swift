@@ -12,6 +12,8 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var backToButton: UIButton!
+    @IBOutlet weak var shutDownButton: UIButton!
     
     private let viewModel = ProfileViewModel()
     
@@ -30,6 +32,20 @@ class MyProfileViewController: UIViewController {
         } else {
             print("Kullanıcı ID bulunamadı.")
         }
+    }
+    
+    @IBAction func backTuButtonClicked(_ sender:UIButton){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "dashboardID")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    @IBAction func shutDownButtonClicked(_ sender:UIButton){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "homePageID")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
+        
     }
     
 }

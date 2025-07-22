@@ -72,6 +72,11 @@ class DashboardViewController: UIViewController {
     @objc func creditButtonTapped(_ sender: UIButton) {
         let selectedId = sender.tag
         print("Butona tıklandı, kredi ID: \(selectedId)")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "CreditDetailVC")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
     }
     
 }

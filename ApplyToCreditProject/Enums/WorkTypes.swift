@@ -7,8 +7,8 @@
 
 import Foundation
 enum WorkType: Int, Codable {
-    case Unwork  = 0
-    case partTime     = 1
-    case fullTime     = 2
-    case Freelance  = 3
+    case Working = 0
+    case Retired    = 1
+    case Unworking  = 2
+    case Student = 3
 }

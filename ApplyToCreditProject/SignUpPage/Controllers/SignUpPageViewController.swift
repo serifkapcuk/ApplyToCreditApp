@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SignUpPageViewController: UIViewController {
+class SignUpPageViewController: UIViewController{
     
     @IBOutlet var sigUpButton: UIButton!
     @IBOutlet weak var birthdayTextField: UITextField!
@@ -22,6 +22,8 @@ class SignUpPageViewController: UIViewController {
     @IBOutlet weak var workingSituationTextField: UITextField!
     @IBOutlet weak var telephoneNumberTextField: UITextField!
     
+    let pickerView = UIPickerView()
+    var selectedWorkType: WorkType?
     private let viewModel = SignUpPageViewModel()
     private let datePicker = UIDatePicker()
     
@@ -30,9 +32,17 @@ class SignUpPageViewController: UIViewController {
         viewModel.delegate = self
         setupUI()
         configureDatePicker()
-        
+        // setupPickerView()
     }
-    
+    /*
+    func setupPickerView(){
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        workingSituationTextField.inputView = pickerView
+        workingSituationTextField.placeholder = "Çalışma Durumu Seç"
+    }
+     */
+   
     func setupUI(){
         nameTextField.backgroundColor = .white
         birthdayTextField.backgroundColor = .white
