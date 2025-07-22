@@ -11,9 +11,8 @@ import UIKit
 
 
 protocol LoginPageViewModelInterface {
-    func loginSucceeded(token: String)
+    func loginSucceeded(token: String,id:Int)
     func loginSucceeded(name: String)
-    func loginSucceeded(user: User)
     func loginFailed(error: Error)
 }
 
@@ -52,7 +51,7 @@ final class LoginPageViewModel {
             do {
                 let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self?.delegate?.loginSucceeded(token: loginResponse.token)
+                    self?.delegate?.loginSucceeded(token: loginResponse.token,id: loginResponse.id)
                     self?.delegate?.loginSucceeded(name: loginResponse.name)
                 }
             } catch {

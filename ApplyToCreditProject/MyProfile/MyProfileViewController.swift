@@ -24,7 +24,7 @@ class MyProfileViewController: UIViewController {
         
     }
     func getUserId() {
-        if let userID = TokenManager.shared.userID {
+        if let userID = UserManager.shared.userID {
             print("Kullanıcı ID: \(userID)")
             viewModel.fetchUser(withId: userID)
         } else {

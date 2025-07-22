@@ -23,6 +23,7 @@
 		B371F7082E2F6FA3006FD36E /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7072E2F6FA3006FD36E /* MyProfileViewController.swift */; };
 		B371F70A2E2F6FB9006FD36E /* myProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7092E2F6FAA006FD36E /* myProfileViewModel.swift */; };
 		B371F70D2E2F732A006FD36E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F70C2E2F726A006FD36E /* User.swift */; };
+		B371F70F2E2F863D006FD36E /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F70E2E2F863A006FD36E /* UserID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B371F7072E2F6FA3006FD36E /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		B371F7092E2F6FAA006FD36E /* myProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileViewModel.swift; sourceTree = "<group>"; };
 		B371F70C2E2F726A006FD36E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B371F70E2E2F863A006FD36E /* UserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -179,6 +181,7 @@
 		B371F5CE2E2A447E006FD36E /* Token */ = {
 			isa = PBXGroup;
 			children = (
+				B371F70E2E2F863A006FD36E /* UserID.swift */,
 				B371F5D02E2A48BD006FD36E /* TokenManager.swift */,
 			);
 			path = Token;
@@ -341,6 +344,7 @@
 				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
 				B371F6832E2E6413006FD36E /* RegisterRequest.swift in Sources */,
 				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
+				B371F70F2E2F863D006FD36E /* UserID.swift in Sources */,
 				B371F70A2E2F6FB9006FD36E /* myProfileViewModel.swift in Sources */,
 				B371F7082E2F6FA3006FD36E /* MyProfileViewController.swift in Sources */,
 				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,

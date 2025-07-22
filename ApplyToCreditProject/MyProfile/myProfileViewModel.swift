@@ -20,6 +20,7 @@ final class ProfileViewModel {
     private let baseURL = "https://6075d8e5012c.ngrok-free.app/api"
     
     func fetchUser(withId id: Int) {
+        UserManager.shared.userID = id
         guard let url = URL(string: "\(baseURL)/users/\(id)") else { return }
         
         var request = URLRequest(url: url)

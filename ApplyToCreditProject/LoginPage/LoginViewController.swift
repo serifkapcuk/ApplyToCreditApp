@@ -102,12 +102,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPageViewModelInterface{
-    func loginSucceeded(user: User) {
-        TokenManager.shared.userID = user.id
-    }
-    
-    func loginSucceeded(token: String) {
+  
+    func loginSucceeded(token: String,id:Int) {
         TokenManager.shared.token = token
+        UserManager.shared.userID = id
         print("Giriş başarılı! Token: \(token)")
         if TokenManager.shared.token !=  nil {
             DispatchQueue.main.async { [weak self] in
