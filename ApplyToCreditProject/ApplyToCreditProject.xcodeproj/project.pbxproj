@@ -26,6 +26,9 @@
 		B371F70F2E2F863D006FD36E /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F70E2E2F863A006FD36E /* UserID.swift */; };
 		B371F7122E2FC11A006FD36E /* CreditsInfoAndApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7112E2FC11A006FD36E /* CreditsInfoAndApplyViewController.swift */; };
 		B371F7142E2FC128006FD36E /* CreditsInfoAndApplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7132E2FC11F006FD36E /* CreditsInfoAndApplyViewModel.swift */; };
+		B371F7692E30C056006FD36E /* CreditApplyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7682E30C050006FD36E /* CreditApplyRequest.swift */; };
+		B371F76B2E30C4B3006FD36E /* CreditTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F76A2E30C4AA006FD36E /* CreditTypeManager.swift */; };
+		B371F76D2E30D039006FD36E /* CreditApplyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F76C2E30D032006FD36E /* CreditApplyResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		B371F70E2E2F863A006FD36E /* UserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
 		B371F7112E2FC11A006FD36E /* CreditsInfoAndApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsInfoAndApplyViewController.swift; sourceTree = "<group>"; };
 		B371F7132E2FC11F006FD36E /* CreditsInfoAndApplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsInfoAndApplyViewModel.swift; sourceTree = "<group>"; };
+		B371F7682E30C050006FD36E /* CreditApplyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditApplyRequest.swift; sourceTree = "<group>"; };
+		B371F76A2E30C4AA006FD36E /* CreditTypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeManager.swift; sourceTree = "<group>"; };
+		B371F76C2E30D032006FD36E /* CreditApplyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditApplyResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -259,10 +265,21 @@
 		B371F7102E2FC0BF006FD36E /* CreditsInfoAndApply */ = {
 			isa = PBXGroup;
 			children = (
-				B371F7132E2FC11F006FD36E /* CreditsInfoAndApplyViewModel.swift */,
 				B371F7112E2FC11A006FD36E /* CreditsInfoAndApplyViewController.swift */,
+				B371F7132E2FC11F006FD36E /* CreditsInfoAndApplyViewModel.swift */,
+				B371F73E2E30C034006FD36E /* New Group */,
 			);
 			path = CreditsInfoAndApply;
+			sourceTree = "<group>";
+		};
+		B371F73E2E30C034006FD36E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B371F76C2E30D032006FD36E /* CreditApplyResponse.swift */,
+				B371F76A2E30C4AA006FD36E /* CreditTypeManager.swift */,
+				B371F7682E30C050006FD36E /* CreditApplyRequest.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,11 +380,14 @@
 				B371F7122E2FC11A006FD36E /* CreditsInfoAndApplyViewController.swift in Sources */,
 				B371F7082E2F6FA3006FD36E /* MyProfileViewController.swift in Sources */,
 				B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */,
+				B371F7692E30C056006FD36E /* CreditApplyRequest.swift in Sources */,
+				B371F76B2E30C4B3006FD36E /* CreditTypeManager.swift in Sources */,
 				B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */,
 				B371F6872E2E78E9006FD36E /* WorkTypes.swift in Sources */,
 				B371F67B2E2E2380006FD36E /* NameManager.swift in Sources */,
 				B371F7142E2FC128006FD36E /* CreditsInfoAndApplyViewModel.swift in Sources */,
 				B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */,
+				B371F76D2E30D039006FD36E /* CreditApplyResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -67,6 +67,7 @@ class DashboardViewController: UIViewController {
             button.addTarget(self, action: #selector(creditButtonTapped(_:)), for: .touchUpInside)
             
             stackView.addArrangedSubview(button)
+            CreditTypeManager.sharedCredit?.currentCreditType = credit.id
         }
     }
     @objc func creditButtonTapped(_ sender: UIButton) {
