@@ -28,7 +28,7 @@ class DashboardViewController: UIViewController {
                 self?.createButtonsDynamically(from: creditArray)
             }
         }
-      
+        
         
     }
     @IBAction func profileButtonTapped()  {
@@ -41,6 +41,8 @@ class DashboardViewController: UIViewController {
     func getTitleName() {
         if let name = NameManager.sharedName?.currentUserName {
             headerText.text = "HOŞGELDİN , \(name)!"
+            headerText.font = UIFont.boldSystemFont(ofSize: 24)
+            headerText.textColor = .black
         }
         
     }
@@ -53,9 +55,9 @@ class DashboardViewController: UIViewController {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         for credit in credits {
-           
+            
             let button = UIButton(type: .system)
-            button.setTitle(credit.creditName, for: .normal)            
+            button.setTitle(credit.creditName, for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             button.backgroundColor = .white
             button.tintColor = .black
@@ -67,15 +69,17 @@ class DashboardViewController: UIViewController {
             button.addTarget(self, action: #selector(creditButtonTapped(_:)), for: .touchUpInside)
             
             stackView.addArrangedSubview(button)
-            CreditTypeManager.sharedCredit?.currentCreditType = credit.id
+            //CreditTypeManager.sharedCredit?.currentCreditType = credit.id
         }
     }
+    
     @objc func creditButtonTapped(_ sender: UIButton) {
         let selectedId = sender.tag
         print("Butona tıklandı, kredi ID: \(selectedId)")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "CreditDetailVC")
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "CreditDetailVC") as? CreditsInfoAndApplyViewController else { return }
+        nextVC.selectedCreditId = selectedId
         nextVC.modalPresentationStyle = .custom
         self.present(nextVC, animated: true, completion: nil)
     }

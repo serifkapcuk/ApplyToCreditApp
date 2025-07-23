@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet var vakifbankliOlLogo: UIButton!
+
     
     let viewModel = LoginPageViewModel()
     
@@ -37,6 +39,12 @@ class LoginViewController: UIViewController {
         passwordTextField.isSecureTextEntry.toggle()
         let imageName = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
         sender.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    @IBAction func clickedTheVakifbankliOlButton () {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "signUpID")
+        nextVC.modalPresentationStyle = .custom
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     func setupUI(){

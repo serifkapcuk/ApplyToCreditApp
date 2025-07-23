@@ -5,7 +5,6 @@ import UIKit
 class HomePageViewController: UIViewController, UIScrollViewDelegate {
     
     
-    
     @IBOutlet var upperSignInButtonLabel: UILabel!
     @IBOutlet var secondUpperSignInButtonLabel: UILabel!
     @IBOutlet weak var scrollViewHomePage: UIScrollView!

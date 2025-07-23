@@ -58,6 +58,7 @@ final class CreditsInfoAndApplyViewModel {
                 DispatchQueue.main.async {
                     if decodedResponse.isApplied {
                         self?.delegate?.applicationSucceeded()
+                        
                     } else {
                         let error = NSError(
                             domain: "",

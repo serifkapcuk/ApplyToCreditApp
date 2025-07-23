@@ -29,6 +29,7 @@
 		B371F7692E30C056006FD36E /* CreditApplyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7682E30C050006FD36E /* CreditApplyRequest.swift */; };
 		B371F76B2E30C4B3006FD36E /* CreditTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F76A2E30C4AA006FD36E /* CreditTypeManager.swift */; };
 		B371F76D2E30D039006FD36E /* CreditApplyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F76C2E30D032006FD36E /* CreditApplyResponse.swift */; };
+		B371F7992E311305006FD36E /* ResultScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F7982E311305006FD36E /* ResultScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		B371F7682E30C050006FD36E /* CreditApplyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditApplyRequest.swift; sourceTree = "<group>"; };
 		B371F76A2E30C4AA006FD36E /* CreditTypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeManager.swift; sourceTree = "<group>"; };
 		B371F76C2E30D032006FD36E /* CreditApplyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditApplyResponse.swift; sourceTree = "<group>"; };
+		B371F7982E311305006FD36E /* ResultScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -144,6 +146,7 @@
 		B33151C82E252EF900B42168 = {
 			isa = PBXGroup;
 			children = (
+				B371F7972E3112D2006FD36E /* ResultOfCreditApplyScreen */,
 				B371F7102E2FC0BF006FD36E /* CreditsInfoAndApply */,
 				B371F7062E2F6F76006FD36E /* MyProfile */,
 				B371F6732E2E1978006FD36E /* SignUpPage */,
@@ -282,6 +285,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		B371F7972E3112D2006FD36E /* ResultOfCreditApplyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B371F7982E311305006FD36E /* ResultScreenViewController.swift */,
+			);
+			path = ResultOfCreditApplyScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +385,7 @@
 				B371F70D2E2F732A006FD36E /* User.swift in Sources */,
 				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
 				B371F6832E2E6413006FD36E /* RegisterRequest.swift in Sources */,
+				B371F7992E311305006FD36E /* ResultScreenViewController.swift in Sources */,
 				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
 				B371F70F2E2F863D006FD36E /* UserID.swift in Sources */,
 				B371F70A2E2F6FB9006FD36E /* myProfileViewModel.swift in Sources */,
