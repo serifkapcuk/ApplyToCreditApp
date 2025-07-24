@@ -68,51 +68,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE102A70-665C-4F5A-9DB7-6CBA860DDE80"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Dashboard/Controllers/DashboardViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "creditButtonTapped(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FE102A70-665C-4F5A-9DB7-6CBA860DDE80 - a470d73490bb6e27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ApplyToCreditProject.DashboardViewController.creditButtonTapped(__C.UIButton) -&gt; ()"
-                  moduleName = "ApplyToCreditProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serifbotankapcuk/Desktop/ApplyToCreditApp/ApplyToCreditProject/Dashboard/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85">
-               </Location>
-               <Location
-                  uuid = "FE102A70-665C-4F5A-9DB7-6CBA860DDE80 - a470d73490bb6e65"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ApplyToCreditProject.DashboardViewController.creditButtonTapped(__C.UIButton) -&gt; ()"
-                  moduleName = "ApplyToCreditProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serifbotankapcuk/Desktop/ApplyToCreditApp/ApplyToCreditProject/Dashboard/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
