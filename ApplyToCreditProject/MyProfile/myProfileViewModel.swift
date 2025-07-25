@@ -12,6 +12,8 @@ import Foundation
 protocol ProfileViewModelInterface: AnyObject {
     func getUser(_ user: User)
     func getUserFailed(with error: Error)
+    func getCredits(_ credits: UserCreditStatus)
+    func getCreditsFailed(with error: Error)
 }
 
 final class ProfileViewModel {
@@ -49,4 +51,34 @@ final class ProfileViewModel {
             }
         }.resume()
     }
-}
+    func fetchCredits(forUser id: Int) {
+            guard let url = URL(string: "\(baseURL)/creditswithuser/\(id)") else { return }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.setValue("application/json", forHTTPHeaderField: "accept")
+            
+            URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self?.delegate?.getCreditsFailed(with: error)
+                    }
+                    return
+                }
+                
+                guard let data = data else { return }
+                
+                do {
+                    let credits = try JSONDecoder().decode(UserCreditStatus.self, from: data)
+                    DispatchQueue.main.async {
+                        self?.delegate?.getCredits(credits)
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self?.delegate?.getCreditsFailed(with: error)
+                    }
+                }
+            }.resume()
+        }
+    }
+

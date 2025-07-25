@@ -9,8 +9,9 @@
 
 import UIKit
 
-class SignUpPageViewController: UIViewController{
-    
+class SignUpPageViewController: UIViewController {
+   
+ 
     @IBOutlet var sigUpButton: UIButton!
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
@@ -22,28 +23,22 @@ class SignUpPageViewController: UIViewController{
     @IBOutlet weak var workingSituationTextField: UITextField!
     @IBOutlet weak var telephoneNumberTextField: UITextField!
     
-    let pickerView = UIPickerView()
-    var selectedWorkType: WorkType?
+   
     private let viewModel = SignUpPageViewModel()
     private let datePicker = UIDatePicker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         setupUI()
         configureDatePicker()
-        // setupPickerView()
+        setupPasswordToggle()
+        setup2PasswordToggle()
     }
-    /*
-    func setupPickerView(){
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        workingSituationTextField.inputView = pickerView
-        workingSituationTextField.placeholder = "Çalışma Durumu Seç"
-    }
-     */
-   
+
     func setupUI(){
+        
         nameTextField.backgroundColor = .white
         birthdayTextField.backgroundColor = .white
         surnameTextField.backgroundColor = .white
@@ -73,6 +68,9 @@ class SignUpPageViewController: UIViewController{
         workingSituationTextField.tintColor = .black
         repeatPasswordTextField.tintColor = .black
         tcKimlikNoTextField.tintColor = .black
+        passwordTextField.isSecureTextEntry = true
+        repeatPasswordTextField.isSecureTextEntry = true
+
         
         nameTextField.attributedPlaceholder = NSAttributedString(
             string: "İsim",
@@ -110,7 +108,46 @@ class SignUpPageViewController: UIViewController{
             string: "T.C. Kimlik Numarası",
             attributes: [.foregroundColor: UIColor.black]
         )
+        
     }
+    
+    func setupPasswordToggle() {
+        let eyeButton = UIButton(type: .custom)
+        eyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        eyeButton.tintColor = .gray
+        eyeButton.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        eyeButton.addTarget(self, action: #selector(togglePasswordVisibility(_:)), for: .touchUpInside)
+        
+        passwordTextField.rightView = eyeButton
+        passwordTextField.rightViewMode = .always
+     
+      
+    }
+    @objc func togglePasswordVisibility(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+        let imageName = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
+        sender.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    
+    func setup2PasswordToggle() {
+        let eyeButton = UIButton(type: .custom)
+        eyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        eyeButton.tintColor = .gray
+        eyeButton.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        eyeButton.addTarget(self, action: #selector(toggle2PasswordVisibility(_:)), for: .touchUpInside)
+        
+       repeatPasswordTextField.rightView = eyeButton
+        repeatPasswordTextField.rightViewMode = .always
+     
+      
+    }
+    @objc func toggle2PasswordVisibility(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+        let imageName = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
+        sender.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    
+    
     @IBAction func cancelButtonClicked() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "homePageID")
@@ -131,6 +168,7 @@ class SignUpPageViewController: UIViewController{
     }
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         guard
+            
             let name = nameTextField.text, !name.isEmpty,
             let lastName = surnameTextField.text, !lastName.isEmpty,
             let idNo =  tcKimlikNoTextField.text, !idNo.isEmpty,
@@ -140,7 +178,9 @@ class SignUpPageViewController: UIViewController{
             let email = emailAddressTextField.text, !email.isEmpty,
             let pwd = passwordTextField.text, !pwd.isEmpty
         else {
-            showAlert(title: "Eksik Alan", message: "Lütfen Tüm Alanları Doldurunuz")
+            let alert = UIAlertController(title: "Hata", message:"Telefon Numaranızın Başında '0' olmadığından emin olun!Parolarınızın eşleştiğine emin olun! Parolanız 6 haneden fazla olamaz! ve Lütfen Tüm Boşlukları Doldurunuz!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -180,7 +220,9 @@ extension SignUpPageViewController : RegisterPageViewModelInterface {
     func registerFailed(error: Error) {
         DispatchQueue.main.async {
             self.showAlert(title: "Kayıt Başarısız", message: error.localizedDescription)
+            
         }
     }
     
 }
+

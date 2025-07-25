@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B33152892E2665BB00B42168 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33152882E2665BB00B42168 /* Slide.swift */; };
 		B331528B2E2665CA00B42168 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = B331528A2E2665CA00B42168 /* Slide.xib */; };
+		B348BF122E33ABF200849EF5 /* UserCreditStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348BF112E33ABE800849EF5 /* UserCreditStatus.swift */; };
 		B371F5852E2A31DD006FD36E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5842E2A31DD006FD36E /* DashboardViewController.swift */; };
 		B371F5872E2A31E5006FD36E /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */; };
 		B371F5F42E2A670E006FD36E /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371F5D02E2A48BD006FD36E /* TokenManager.swift */; };
@@ -36,6 +37,7 @@
 		B33151D12E252EF900B42168 /* ApplyToCreditProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplyToCreditProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33152882E2665BB00B42168 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		B331528A2E2665CA00B42168 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		B348BF112E33ABE800849EF5 /* UserCreditStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditStatus.swift; sourceTree = "<group>"; };
 		B371F5842E2A31DD006FD36E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B371F5862E2A31E0006FD36E /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		B371F5D02E2A48BD006FD36E /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		B371F70B2E2F725F006FD36E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B348BF112E33ABE800849EF5 /* UserCreditStatus.swift */,
 				B371F70C2E2F726A006FD36E /* User.swift */,
 			);
 			path = Models;
@@ -384,6 +387,7 @@
 				B371F5FB2E2A729D006FD36E /* EndpointCategory.swift in Sources */,
 				B371F70D2E2F732A006FD36E /* User.swift in Sources */,
 				B371F5F62E2A708E006FD36E /* CreditTypes.swift in Sources */,
+				B348BF122E33ABF200849EF5 /* UserCreditStatus.swift in Sources */,
 				B371F6832E2E6413006FD36E /* RegisterRequest.swift in Sources */,
 				B371F7992E311305006FD36E /* ResultScreenViewController.swift in Sources */,
 				B371F5F92E2A725A006FD36E /* EndPoint.swift in Sources */,
